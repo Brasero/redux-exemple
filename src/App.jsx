@@ -1,16 +1,28 @@
-import TaskList from "./component/TaskList/index.jsx";
-import FilterButtons from "./component/FilterButtons/index.jsx";
-import AddTask from "./component/AddTask/index.jsx";
+import TasksPage from "./pages/TasksPage.jsx";
 import './App.css'
+import DragonsPage from "./pages/DragonsPage";
+import {Routes, Route} from "react-router-dom";
+import Nav from "./component/Nav/index.jsx";
+
+const styledApp = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%'
+}
 
 function App() {
 
   return (
-    <>
-        <FilterButtons />
-        <TaskList/>
-        <AddTask />
-    </>
+    <div style={styledApp}>
+        <Nav />
+        <Routes>
+            <Route path={'/'} element={<TasksPage />} />
+            <Route path={'/dragons'} element={<DragonsPage />} />
+        </Routes>
+    </div>
   )
 }
 

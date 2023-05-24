@@ -3,12 +3,31 @@ import {FiltredTaskSelector, TaskSelector} from "../../store/selectors/TaskSelec
 import {removeTask, toggleTask} from "../../store/actions/TaskActions.js";
 import {useDispatch, useSelector} from "react-redux";
 
+const trashStyle = {
+    transform: 'scale(0.6)',
+    background: 'red',
+    fontSize: '1.1rem'
+}
+
+const itemStyle = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    listDecoration: 'none'
+}
+
+const labelStyle = (done) => {
+    return {
+        textDecoration: done ? 'line-through' : 'none',
+        color: done ? '#B5B5B5' : '#fff'
+    }
+}
 
 const TaskItem = ({task, onToggle, onDelete}) => {
-    return <li>
-            <input type={'checkbox'} onChange={() => onToggle(task)} checked={task.done}/>
-            {task.task}
-            <button onClick={() => {onDelete(task)}}>X</button>
+    return <li style={itemStyle}>
+            <input type={'checkbox'} id={`input-${task.id}`} onChange={() => onToggle(task)} checked={task.done}/>
+            <label htmlFor={`input-${task.id}`} style={labelStyle(task.done)}>{task.task}</label>
+            <button style={trashStyle} onClick={() => {onDelete(task)}}>X</button>
             </li>
 }
 
