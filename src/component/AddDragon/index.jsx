@@ -11,7 +11,7 @@ function AddDragon({onSubmit, onReverse}) {
 
 
     return (
-        <>
+        <div>
             <form onSubmit={handleSubmit}>
                 <input
                     type={'text'}
@@ -22,7 +22,7 @@ function AddDragon({onSubmit, onReverse}) {
                 <button role={'submit'}>Enregistrer</button>
             </form>
             <button role={"button"} onClick={() => onReverse()}>Inverser</button>
-        </>
+        </div>
     )
 }
 

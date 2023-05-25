@@ -15,8 +15,10 @@ function DragonsPage() {
     return (
         <>
             <DragonHeader dragonQte={count} error={message} />
-            <AddDragon onSubmit={onAddDragon} onReverse={onReverseDragon} />
-            <DragonList dragons={dragons} onRemove={onRemoveDragon} />
+            <div style={{display: 'flex', gap: '10px'}}>
+                <AddDragon onSubmit={onAddDragon} onReverse={onReverseDragon} />
+                <DragonList dragons={dragons} onRemove={onRemoveDragon} />
+            </div>
         </>
     )
 }

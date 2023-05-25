@@ -3,9 +3,16 @@ const buttonStyle = {
     background: 'red'
 }
 
+const style = {
+    minWidth: '150px',
+    display: "flex",
+    alignItems: 'center',
+    justifyContent: 'space-between'
+}
+
 function DragonItem({dragon, onRemove}) {
     return (
-        <li>
+        <li style={style}>
             <span>{dragon}</span>
             <button
                 onClick={() => onRemove(dragon)}
