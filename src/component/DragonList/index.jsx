@@ -1,4 +1,4 @@
-import DragonItem from "./DragonItem.jsx";
+import ListItem from "./ListItem.jsx";
 
 function DragonList({dragons, onRemove}) {
 
@@ -9,10 +9,10 @@ function DragonList({dragons, onRemove}) {
             {
                 dragons.map(
                     (dragon, i) =>
-                        <DragonItem
+                        <ListItem
                             key={i}
                             onRemove={onRemove}
-                            dragon={dragon}
+                            data={dragon}
                         />
                 )
             }

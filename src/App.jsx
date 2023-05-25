@@ -29,7 +29,7 @@ function App() {
         {
             logs.length > 0 ?
 
-                logs.map((log, i) => <li key={i}>Action : {log.action}, name: {log.name}, nb dragons: {log.count}</li>)
+                logs.map((log, i) => <li key={i}>Action : {log.action}, date: {log.date} <br/> name: {log.name}, nb {log.store}: {log.count}</li>)
                  :
                 <li>Aucune action n'a été effectuée</li>
         }

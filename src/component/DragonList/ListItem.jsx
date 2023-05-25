@@ -10,12 +10,12 @@ const style = {
     justifyContent: 'space-between'
 }
 
-function DragonItem({dragon, onRemove}) {
+function ListItem({data, onRemove}) {
     return (
         <li style={style}>
-            <span>{dragon}</span>
+            <span>{data}</span>
             <button
-                onClick={() => onRemove(dragon)}
+                onClick={() => onRemove(data)}
                 style={buttonStyle}
                 role={'button'}
             >
@@ -25,4 +25,4 @@ function DragonItem({dragon, onRemove}) {
     )
 }
 
-export default DragonItem
+export default ListItem
